@@ -1,6 +1,8 @@
 #pragma once
+//Krasivin V. A.
 
-void StartMenuPolling();
+// TODO
+void FunctionCalcMenu();
 
 void InputFunc();
 void OutputFunc();

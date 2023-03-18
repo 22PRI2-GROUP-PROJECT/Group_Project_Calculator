@@ -1,6 +1,6 @@
 #include "FunctionsCalc.h"
 
-void StartMenuPolling()
+void StartFunctionCalcMenuPolling()
 {
 
 }

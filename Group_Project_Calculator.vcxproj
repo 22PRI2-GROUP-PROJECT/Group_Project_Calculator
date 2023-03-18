@@ -135,7 +135,7 @@
     <ClInclude Include="ProbStatCalc.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Fractions.cpp" />
+    <ClCompile Include="FractionsCalc.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ProbStatCalc.cpp" />
   </ItemGroup>

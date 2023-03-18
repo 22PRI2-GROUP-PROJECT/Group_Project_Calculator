@@ -2,4 +2,4 @@
 
 void FractionsCalcMenu();
 void FractionsCalc();
-// Пицца с ананасами вкусная
+// Пицца с ананасами вкусная 

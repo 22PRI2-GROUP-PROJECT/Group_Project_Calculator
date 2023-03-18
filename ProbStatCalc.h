@@ -1,4 +1,7 @@
 #pragma once
 
 void ProbStatCalcMenu();
-void ProbStatCalc();
+
+void ProbabilityCalc();
+void DispersionCalc();
+void MatchExpectation();

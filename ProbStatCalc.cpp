@@ -1,5 +1,5 @@
 #include "ProbStatCalc.h"
-// Журов
+// Zhurov E. D.
 void ProbStatCalcMenu(){} // TO DO! 
 
 void ProbabilityCalc(){} // TO DO! // Вероятность

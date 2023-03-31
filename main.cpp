@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include <conio.h>
+#include <locale>
+//#include "MainHeader.h"
 #include "MatrixCalc.h"
 #include "FractionsCalc.h"
 #include "FunctionsCalc.h"
@@ -19,25 +21,25 @@ void MainMenu(int switcher)
     switch (switcher)
     {
     case 1:
-        cout << "\r\n\n\n\n\n\n                  \t\t\t\t\t  << MATRIX >>\n\n             \t\t\t\t\t\tORDINARY DELENIE\n\n                            \t\t\t\t COMBINATORICA\n\n                              \t\t\t\t VEROYATN I STAT\n\n                              \t\t\t\t    POLINOM\n\n               \t\t\t\t\t\t    FUNCTIONS\n\n               \t\t\t\t\t\t      EXIT\n\n";
+        cout << "\r\n\n\n\n\n\n                  \t\t\t\t\t  << люрпхжш >>\n\n             \t\t\t\t\t\tнашймнбеммше дпнах\n\n                            \t\t\t\t  йнлахмюрнпхйю\n\n                             \t\t\t\tреп.беп. х ярюрхярхйю\n\n                              \t\t\t\t    лмнцнвкемш\n\n               \t\t\t\t\t\t     тсмйжхх\n\n               \t\t\t\t\t\t      бшунд\n\n";
         break;
     case 2:
-        cout << "\r\n\n\n\n\n\n                     \t\t\t\t\t     MATRIX   \n\n             \t\t\t\t\t     << ORDINARY DELENIE >>\n\n                            \t\t\t\t COMBINATORICA\n\n                              \t\t\t\t VEROYATN I STAT\n\n                              \t\t\t\t    POLINOM\n\n               \t\t\t\t\t\t    FUNCTIONS\n\n               \t\t\t\t\t\t      EXIT\n\n";
+        cout << "\r\n\n\n\n\n\n                     \t\t\t\t\t     люрпхжш   \n\n             \t\t\t\t\t     << нашймнбеммше дпнах >>\n\n                            \t\t\t\t  йнлахмюрнпхйю\n\n                              \t\t\t\tреп.беп. х ярюрхярхйю\n\n                              \t\t\t\t    лмнцнвкемш\n\n               \t\t\t\t\t\t     тсмйжхх\n\n               \t\t\t\t\t\t      бшунд\n\n";
         break;
     case 3:
-        cout << "\r\n\n\n\n\n\n                     \t\t\t\t\t     MATRIX   \n\n             \t\t\t\t\t\tORDINARY DELENIE\n\n                            \t\t\t      << COMBINATORICA >>\n\n                              \t\t\t\t VEROYATN I STAT\n\n                              \t\t\t\t    POLINOM\n\n               \t\t\t\t\t\t    FUNCTIONS\n\n               \t\t\t\t\t\t      EXIT\n\n";
+        cout << "\r\n\n\n\n\n\n                     \t\t\t\t\t     люрпхжш   \n\n             \t\t\t\t\t\tнашймнбеммше дпнах\n\n                            \t\t\t       << йнлахмюрнпхйю >>\n\n                             \t\t\t\tреп.беп. х ярюрхярхйю\n\n                              \t\t\t\t    лмнцнвкемш\n\n               \t\t\t\t\t\t     тсмйжхх\n\n               \t\t\t\t\t\t      бшунд\n\n";
         break;
     case 4:
-        cout << "\r\n\n\n\n\n\n                     \t\t\t\t\t     MATRIX   \n\n             \t\t\t\t\t\tORDINARY DELENIE\n\n                            \t\t\t\t COMBINATORICA\n\n                              \t\t\t      << VEROYATN I STAT >>\n\n                              \t\t\t\t    POLINOM\n\n               \t\t\t\t\t\t    FUNCTIONS\n\n               \t\t\t\t\t\t      EXIT\n\n";
+        cout << "\r\n\n\n\n\n\n                     \t\t\t\t\t     люрпхжш   \n\n             \t\t\t\t\t\tнашймнбеммше дпнах\n\n                            \t\t\t\t  йнлахмюрнпхйю\n\n                             \t\t\t     << реп.беп. х ярюрхярхйю >>\n\n                              \t\t\t\t    лмнцнвкемш\n\n               \t\t\t\t\t\t     тсмйжхх\n\n               \t\t\t\t\t\t      бшунд\n\n";
         break;
     case 5:
-        cout << "\r\n\n\n\n\n\n                     \t\t\t\t\t     MATRIX   \n\n             \t\t\t\t\t\tORDINARY DELENIE\n\n                            \t\t\t\t COMBINATORICA\n\n                              \t\t\t\t VEROYATN I STAT\n\n                              \t\t\t\t << POLINOM >>\n\n               \t\t\t\t\t\t    FUNCTIONS\n\n               \t\t\t\t\t\t      EXIT\n\n";
+        cout << "\r\n\n\n\n\n\n                     \t\t\t\t\t     люрпхжш   \n\n             \t\t\t\t\t\tнашймнбеммше дпнах\n\n                            \t\t\t\t  йнлахмюрнпхйю\n\n                             \t\t\t\tреп.беп. х ярюрхярхйю\n\n                              \t\t\t\t << лмнцнвкемш >>\n\n               \t\t\t\t\t\t     тсмйжхх\n\n               \t\t\t\t\t\t      бшунд\n\n";
         break;
     case 6:
-        cout << "\r\n\n\n\n\n\n                     \t\t\t\t\t     MATRIX   \n\n             \t\t\t\t\t\tORDINARY DELENIE\n\n                            \t\t\t\t COMBINATORICA\n\n                              \t\t\t\t VEROYATN I STAT\n\n                              \t\t\t\t    POLINOM\n\n               \t\t\t\t\t\t << FUNCTIONS >>\n\n               \t\t\t\t\t\t      EXIT\n\n";
+        cout << "\r\n\n\n\n\n\n                     \t\t\t\t\t     люрпхжш   \n\n             \t\t\t\t\t\tнашймнбеммше дпнах\n\n                            \t\t\t\t  йнлахмюрнпхйю\n\n                             \t\t\t\tреп.беп. х ярюрхярхйю\n\n                              \t\t\t\t    лмнцнвкемш\n\n               \t\t\t\t\t\t  << тсмйжхх >>\n\n               \t\t\t\t\t\t      бшунд\n\n";
         break;
     case 7:
-        cout << "\r\n\n\n\n\n\n                     \t\t\t\t\t     MATRIX   \n\n             \t\t\t\t\t\tORDINARY DELENIE\n\n                            \t\t\t\t COMBINATORICA\n\n                              \t\t\t\t VEROYATN I STAT\n\n                              \t\t\t\t    POLINOM\n\n               \t\t\t\t\t\t    FUNCTIONS\n\n               \t\t\t\t\t\t   << EXIT >>\n\n";
+        cout << "\r\n\n\n\n\n\n                     \t\t\t\t\t     люрпхжш   \n\n             \t\t\t\t\t\tнашймнбеммше дпнах\n\n                            \t\t\t\t  йнлахмюрнпхйю\n\n                             \t\t\t\tреп.беп. х ярюрхярхйю\n\n                              \t\t\t\t    лмнцнвкемш\n\n               \t\t\t\t\t\t     тсмйжхх\n\n               \t\t\t\t\t\t   << бшунд >>\n\n";
         break;
     default: MainMenu(1);
     }
@@ -61,17 +63,15 @@ void MainMenu(int switcher)
     }
     if (key == 13 || key == 32)
     {
-        if (switcher == 1)
+        if (switcher == 1) { MatrMenu(); MainMenu(1);}
+        if (switcher == 2) { ProbStatCalcMenu(); MainMenu(1); }
+        if (switcher == 3) { CombMenu(); MainMenu(1); }
             //
-        if (switcher == 2)
+        if (switcher == 4) { ProbStatCalcMenu(); MainMenu(1); }
             //
-        if (switcher == 3)
+        if (switcher == 5) { PolynomialCalcMenu(); MainMenu(1); }
             //
-        if (switcher == 4)
-            //
-        if (switcher == 5)
-            //
-        if (switcher == 6)
+        if (switcher == 6) { FunctionsMenu(); MainMenu(1); }
             //
         if (switcher == 7)
         {
@@ -83,6 +83,7 @@ void MainMenu(int switcher)
 
 int main()
 {
+    setlocale(LC_ALL, "Rus");
     MainMenu(1);
     return 0;
 }

@@ -1,37 +1,39 @@
 #include "ProbStatCalc.h"
 // Zhurov E. D.
-void ProbStatCalcMenu() { // TO DO!
+void ProbStatCalcMenu() {
 	int choose = 0;
-	cout << "Choose option\n";
-	cout << "1) Finding the probability m/n\n";
-	cout << "2) Finding the mathematical expectation\n";
-	cout << "3) Finding the variance\n";
+	cout << "Выберите операцию\n";
+	cout << "0) Вернуться в главное меню\n"
+	cout << "1) Найти вероятность m/n\n";
+	cout << "2) Найти математическое ожидание\n";
+	cout << "3) Найти дисперсию\n";
 	cin >> choose;
 	switch (choose) {
+	case 0: return;
 	case 1:ProbabilityCalc(); break;
 	case 2:MathExpectation(); break;
 	case 3:DispersionCalc(); break;
-	default: cout << "Wrong value!\n"; ProbStatCalcMenu();
+	default: cout << "Неверное значение!\n"; ProbStatCalcMenu();
 	}
 }
 
-void ProbabilityCalc() { // TO DO! // Вероятность
+void ProbabilityCalc() {// Вероятность
 	int n, m;
 	do {
-		cout << "Enter the number of favorable outcomes: ";
+		cout << "Введите кол-во благоприятствующих событию A исходов: ";
 		cin >> m;
-		cout << "Enter the number of all outcomes: ";
+		cout << "Введите кол-во всех возможных исходов: ";
 		cin >> n;
 	} while ((n < 0) || (m <= 0));
 	cout << "P(A): " << double(m) / double(n);
 }
 
-void DispersionCalc() { // TO DO! // Дисперсия
+void DispersionCalc() {// Дисперсия
 	int number_of_values;
 	do {
-		cout << "Enter the number of values\n";
+		cout << "Введите кол-во значений\n";
 		cin >> number_of_values;
-		if (number_of_values < 1) cout << "Error! Value cannot be < 1!";
+		if (number_of_values < 1) cout << "Ошибка! Значение не может быть < 1!";
 	} while (number_of_values < 1);
 	double* x = new double[number_of_values];
 	double* p = new double[number_of_values];
@@ -48,12 +50,12 @@ void DispersionCalc() { // TO DO! // Дисперсия
 	}
 	cout << "D: " << D - (M * M);
 }
-void MathExpectation() { // TO DO! // Мат. ожидание
+void MathExpectation() {// Мат. ожидание
 	int number_of_values;
 	do {
-		cout << "Enter the number of values\n";
+		cout << "Введите кол-во значений\n";
 		cin >> number_of_values;
-		if (number_of_values < 1) cout << "Error! Value cannot be < 1!";
+		if (number_of_values < 1) cout << "Ошибка! Значение не может быть < 1!";
 	} while (number_of_values < 1);
 	double* x = new double[number_of_values];
 	double* p = new double[number_of_values];

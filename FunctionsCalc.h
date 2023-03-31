@@ -32,6 +32,9 @@ struct Cosinusoid {
 
 
 // TODO
+void FunctionsMenu();
+
+
 double polynomial_value(const Polynomial& p, double x);
 double power_value(const Power& f, double x);
 double exponential_value(const Exponential& f, double x);

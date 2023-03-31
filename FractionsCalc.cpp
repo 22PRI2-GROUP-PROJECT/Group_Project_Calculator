@@ -3,45 +3,47 @@
 
 void FractionsMenu() {
 	int choose = 0;
-	cout << "Choose option\n";
-	cout << "1) Basic math operations\n";
-	cout << "2) Fraction Comparison\n";
-	cout << "3) Fraction reduction\n";
-	cout << "4) Fraction to decimal conversion\n";
+	cout << "Выберите операцию\n";
+	cout << "0) Вернуться в главное меню\n"
+	cout << "1) Базовые математические операции\n";
+	cout << "2) Сравнение дробей\n";
+	cout << "3) Сокращение дроби\n";
+	cout << "4) Перевод в десятичную дробь\n";
 	cin >> choose;
 	switch (choose) {
+	case 0: return;
 	case 1:
 	case 2:
 	case 3:
 	case 4: FractionInput(choose); break;
-	default: cout << "Wrong value!\n"; FractionsMenu();
+	default: cout << "Неверное значение!\n"; FractionsMenu();
 	}
-} // TO DO!
+}
 
 void FractionInput(int ch) {
 	struct Fraction Frac;
 	struct Fraction Frac_2;
-	cout << "Add fraction\n";
-	cout << "1) for mixed fraction\n";
-	cout << "2) for common fraction\n";
+	cout << "Добавить дробь\n";
+	cout << "1) Смешанная дробь\n";
+	cout << "2) Обыкновенная дробь\n";
 	int choose_2;
 	do { // Ввод первой дроби
 		cin >> choose_2;
 		switch (choose_2) {
 		case 1:
-			cout << "Enter an integer\n"; cin >> Frac.integer;
-			cout << "Enter the numerator\n"; cin >> Frac.numerator;
+			cout << "Введите целую часть\n"; cin >> Frac.integer;
+			cout << "Введите числитель\n"; cin >> Frac.numerator;
 			do {
-				cout << "Enter denominator\n"; cin >> Frac.denominator;
-				if (Frac.denominator == 0) cout << "Denominator cannot be 0\n";
+				cout << "Введите знаменатель\n"; cin >> Frac.denominator;
+				if (Frac.denominator == 0) cout << "Знаменатель не может быть 0!\n";
 			} while (Frac.denominator == 0); break;
 		case 2:
-			cout << "Enter the numerator\n"; cin >> Frac.numerator;
+			cout << "Введите числитель\n"; cin >> Frac.numerator;
 			do {
-				cout << "Enter denominator\n"; cin >> Frac.denominator;
-				if (Frac.denominator == 0) cout << "Denominator cannot be 0\n";
+				cout << "Введите знаменатель\n"; cin >> Frac.denominator;
+				if (Frac.denominator == 0) cout << "Знаменатель не может быть 0!\n";
 			} while (Frac.denominator == 0); break;
-		default: cout << "Error!\n";
+		default: cout << "Ошибка!\n";
 		}
 	} while ((choose_2 != 1) && (choose_2 != 2));
 
@@ -54,27 +56,27 @@ void FractionInput(int ch) {
 	if (Frac.numerator < 0) Frac.numerator *= -1;
 
 	if ((ch == 1) || (ch == 2)) { // Ввод второй дроби
-		cout << "Add second fraction\n";
-		cout << "1) for mixed fraction\n";
-		cout << "2) for common fraction\n";
+		cout << "Добавить вторую дробь\n";
+		cout << "1) Смешанная дробь\n";
+		cout << "2) Обыкновенная дробь\n";
 		int choose_2;
 		do {
 			cin >> choose_2;
 			switch (choose_2) {
 			case 1:
-				cout << "Enter an integer\n"; cin >> Frac_2.integer;
-				cout << "Enter the numerator\n"; cin >> Frac_2.numerator;
+				cout << "Введите целую часть\n"; cin >> Frac_2.integer;
+				cout << "Введите числитель\n"; cin >> Frac_2.numerator;
 				do {
-					cout << "Enter denominator\n"; cin >> Frac_2.denominator;
-					if (Frac.denominator == 0) cout << "Denominator cannot be 0\n";
+					cout << "Введите знаменатель\n"; cin >> Frac_2.denominator;
+					if (Frac.denominator == 0) cout << "Знаменатель не может быть 0!\n";
 				} while (Frac_2.denominator == 0); break;
 			case 2:
-				cout << "Enter the numerator\n"; cin >> Frac_2.numerator;
+				cout << "Введите числитель\n"; cin >> Frac_2.numerator;
 				do {
-					cout << "Enter denominator\n"; cin >> Frac_2.denominator;
-					if (Frac.denominator == 0) cout << "Denominator cannot be 0\n";
+					cout << "Введите знаменатель\n"; cin >> Frac_2.denominator;
+					if (Frac.denominator == 0) cout << "Знаменатель не может быть 0!\n";
 				} while (Frac_2.denominator == 0); break;
-			default: cout << "Error!\n";
+			default: cout << "Ошибка!\n";
 			}
 		} while ((choose_2 != 1) && (choose_2 != 2));
 
@@ -89,18 +91,18 @@ void FractionInput(int ch) {
 
 		// Вывод дробей
 		if ((Frac.integer != 0) || (Frac_2.integer != 0)) {
-			cout << "First fraction: ";
+			cout << "Первая дробь: ";
 			if (Frac.minus == true) cout << "-";
 			cout << Frac.integer << " " << Frac.numerator << "/" << Frac.denominator << endl;
-			cout << "Second fraction: ";
+			cout << "Вторая дробь: ";
 			if (Frac_2.minus == true) cout << "-";
 			cout << Frac_2.integer << " " << Frac_2.numerator << "/" << Frac_2.denominator << endl;
 		}
 		else {
-			cout << "First fraction: ";
+			cout << "Первая дробь: ";
 			if (Frac.minus == true) cout << "-";
 			cout << Frac.numerator << "/" << Frac.denominator << endl;
-			cout << "Second fraction: ";
+			cout << "Вторая дробь: ";
 			if (Frac_2.minus == true) cout << "-";
 			cout << Frac_2.numerator << "/" << Frac_2.denominator << endl;
 		}
@@ -127,17 +129,17 @@ void FractionInput(int ch) {
 	}
 }
 
-void BasicOperationsFractions(struct Fraction Frac, struct Fraction Frac_2) { // TO DO! // Базовые математические операции над дробями
+void BasicOperationsFractions(struct Fraction Frac, struct Fraction Frac_2) { // Базовые математические операции над дробями
 	int choose_basic_operation = 0;
 	do {
-		cout << "Choose option\n";
-		cout << "1) find the sum\n";
-		cout << "2) Subtract the second fraction from the first\n";
-		cout << "3) Divide the first fraction by the second\n";
-		cout << "4) multiply fractions\n";
+		cout << "Выберите операцию\n";
+		cout << "1) Сложение\n";
+		cout << "2) Вычитание из первой дроби второй\n";
+		cout << "3) Деление первой дроби на вторую\n";
+		cout << "4) Умножение\n";
 		cin >> choose_basic_operation;
 		if ((choose_basic_operation != 1) && (choose_basic_operation != 2) && (choose_basic_operation != 3) && (choose_basic_operation != 4))
-			cout << "Error\n";
+			cout << "Ошибка!\n";
 	} while ((choose_basic_operation != 1) && (choose_basic_operation != 2) && (choose_basic_operation != 3) && (choose_basic_operation != 4));
 
 	if (choose_basic_operation == 1) {// Сложение
@@ -237,7 +239,7 @@ void BasicOperationsFractions(struct Fraction Frac, struct Fraction Frac_2) { //
 	}
 	ReductionFractionsCalc(Frac);
 }
-void ComparisonFractionsCalc(struct Fraction Frac, struct Fraction Frac_2) { // TO DO! // Сравнение дробей
+void ComparisonFractionsCalc(struct Fraction Frac, struct Fraction Frac_2) {// Сравнение дробей
 	if (((Frac.minus == true) && (Frac_2.minus == false)) || ((Frac.minus == false) && (Frac_2.minus == true))) {
 		if ((Frac.integer != 0) || (Frac_2.integer != 0)) {
 			if (Frac.minus == true) cout << "-";
@@ -303,9 +305,9 @@ void ComparisonFractionsCalc(struct Fraction Frac, struct Fraction Frac_2) { // 
 	}
 	FractionsMenu();
 }
-void ReductionFractionsCalc(struct Fraction Frac) { // TO DO! // Сокращение дробей
+void ReductionFractionsCalc(struct Fraction Frac) {// Сокращение дробей
 	if (Frac.denominator == 0) {
-		cout << "Error! Division by zero!\n"; FractionsMenu();
+		cout << "Ошибка! Деление на 0!\n"; FractionsMenu();
 	}
 	else {
 		Frac.integer = Frac.integer + Frac.numerator / Frac.denominator;
@@ -319,19 +321,19 @@ void ReductionFractionsCalc(struct Fraction Frac) { // TO DO! // Сокращение дроб
 			break;
 		}
 	}
-	cout << "Answer: ";
+	cout << "Ответ: ";
 	if (Frac.minus == true) cout << "-";
 	if (Frac.numerator == 0)
 		cout << Frac.integer << endl;
 	else if (Frac.integer == 0)
 		cout << Frac.numerator << "/" << Frac.denominator << endl;
 	else cout << Frac.integer << " " << Frac.numerator << "/" << Frac.denominator << endl;
-	cout << "Answer in Decimal: ";
+	cout << "Ответ в десятичной дроби: ";
 	DecimalFractionsCalc(Frac);
 }
-void DecimalFractionsCalc(struct Fraction Frac) { // TO DO! // Перевод в десятичную дробь
+void DecimalFractionsCalc(struct Fraction Frac) {// Перевод в десятичную дробь
 	if (Frac.denominator == 0) {
-		cout << "Error! Division by zero!\n"; FractionsMenu();
+		cout << "Ошибка! Деление на 0!\n"; FractionsMenu();
 	}
 	double decimal = 0;
 	decimal += double(Frac.numerator) / double(Frac.denominator) + Frac.integer;

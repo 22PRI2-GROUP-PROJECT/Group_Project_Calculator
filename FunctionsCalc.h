@@ -11,23 +11,23 @@ struct Polynomial {
 };
 
 struct Power {
-    double a, b, c;    // коэффициенты a*x^b + c
+    double a, b, c;    // a*x^b + c
 };
 
 struct Exponential {
-    double a, b, c, d; // коэффициенты a*b^(c*x) + d
+    double a, b, c, d; // a*b^(c*x) + d
 };
 
 struct Logarithm {
-    double a, b, c;    // коэффициенты a*ln(b*x) + c
+    double a, b, c;    // a*ln(b*x) + c
 };
 
 struct Sinusoid {
-    double a, b, c, d; // коэффициенты a*sin(b*x + c) + d
+    double a, b, c, d; // a*sin(b*x + c) + d
 };
 
 struct Cosinusoid {
-    double a, b, c, d; // коэффициенты a*cos(b*x + c) + d
+    double a, b, c, d; // a*cos(b*x + c) + d
 };
 
 
@@ -35,9 +35,20 @@ struct Cosinusoid {
 void FunctionsMenu();
 
 
+Polynomial enter_polynomial();
 double polynomial_value(const Polynomial& p, double x);
+
+Power enter_power();
 double power_value(const Power& f, double x);
+
+Exponential enter_exponental();
 double exponential_value(const Exponential& f, double x);
+
+Logarithm enter_logarithm();
 double logarithm_value(const Logarithm& f, double x);
+
+Sinusoid enter_sinusoid();
 double sinusoid_value(const Sinusoid& f, double x);
+
+Cosinusoid enter_cosinusoid();
 double cosinusoid_value(const Cosinusoid& f, double x);

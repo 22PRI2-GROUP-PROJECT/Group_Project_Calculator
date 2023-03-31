@@ -225,21 +225,23 @@ void MatrMenu()
 
     do
     {
-        cout << "1. Задать первую функцию" << endl;
-        cout << "0. Выход в меню" << endl;
-        cin >> mainChoice;
-        switch (mainChoice)
+
+        do
         {
-        case 0: return;
-        default: cout << "Некорректный выбор операции" << endl; break;
-        }
-
-
+            cout << "1. Задать первую функцию" << endl;
+            cout << "0. Выход в меню" << endl;
+            cin >> mainChoice;
+            switch (mainChoice)
+            {
+            case 0: return;
+            case 1: break;
+            default: cout << "Некорректный выбор операции" << endl; break;
+            }
+        } while (mainChoice != 1);
 
 
         do
         {
-            system("cls");
             cout << "Количество строк первой матрицы ->  ";
             cin >> rows1;
             cout << "Количество столбцов первой матрицы ->  ";

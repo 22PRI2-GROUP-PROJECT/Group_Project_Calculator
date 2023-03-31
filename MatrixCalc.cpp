@@ -1,8 +1,4 @@
-#pragma once
-//Realised by Machehin Grigory Alexandrovich
-
-#include <iostream>
-using namespace std;
+#include "MatrixCalc.h"
 
 void MatrInput();
 void MatrOutput();

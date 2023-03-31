@@ -1,4 +1,4 @@
-//Krasivin V. A.
+//Realised by Krasivin V. A.
 #pragma once
 #include <iostream>
 
@@ -31,24 +31,29 @@ struct Cosinusoid {
 };
 
 
-// TODO
 void FunctionsMenu();
 
 
-Polynomial enter_polynomial();
-double polynomial_value(const Polynomial& p, double x);
+Polynomial EnterPolynomial();
+double PolynomialValue(const Polynomial& p, double x);
+double PolynomialDerivative(const Polynomial& p, double x);
 
-Power enter_power();
-double power_value(const Power& f, double x);
+Power EnterPower();
+double PowerValue(const Power& f, double x);
+double PowerDerivative(const Power& f, double x);
 
-Exponential enter_exponental();
-double exponential_value(const Exponential& f, double x);
+Exponential EnterExponental();
+double ExponentialValue(const Exponential& f, double x);
+double ExponentialDerivative(const Exponential& f, double x);
 
-Logarithm enter_logarithm();
-double logarithm_value(const Logarithm& f, double x);
+Logarithm EnterLogarithm();
+double LogarithmValue(const Logarithm& f, double x);
+double LogarithmDerivative(const Logarithm& f, double x);
 
-Sinusoid enter_sinusoid();
-double sinusoid_value(const Sinusoid& f, double x);
+Sinusoid EnterSinusoid();
+double SinusoidValue(const Sinusoid& f, double x);
+double SinusoidDerivative(const Sinusoid& f, double x);
 
-Cosinusoid enter_cosinusoid();
-double cosinusoid_value(const Cosinusoid& f, double x);
+Cosinusoid EnterCosinusoid();
+double CosinusoidValue(const Cosinusoid& f, double x);
+double CosinusoidDerivative(const Cosinusoid& f, double x);

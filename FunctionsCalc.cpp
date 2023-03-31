@@ -1,7 +1,9 @@
+//Realised by Krasivin V. A.
 #include "FunctionsCalc.h"
 
 void FunctionsMenu()
 {
+	system("cls");
 	double choose;
 	int s_choose;
 
@@ -36,7 +38,7 @@ void FunctionsMenu()
 
 };
 
-Polynomial enter_polynomial() {
+Polynomial EnterPolynomial() {
 	Polynomial p;
 	double N;
 
@@ -47,7 +49,10 @@ Polynomial enter_polynomial() {
 	{
 		cout << "Некорректное значение, повторите ввод: ";
 		cin >> N;
-	} p.N = N;
+	} 
+
+	p.N = N;
+	p.a = new double[N + 1];
 
 	for (int id = 0; id < N; id++)
 	{
@@ -58,15 +63,24 @@ Polynomial enter_polynomial() {
 	return p;
 }
 
-double polynomial_value(const Polynomial& p, double x) {
+double PolynomialValue(const Polynomial& p, double x) {
     double y = 0.0;
-    for (int i = p.N; i >= 0; i--) {
-        y = y * x + p.a[i];
+    for (int id = p.N; id >= 0; id--) {
+        y = y * x + p.a[id];
     }
     return y;
 }
 
-Power enter_power() {
+double PolynomialDerivative(const Polynomial& p, double x)
+{
+	double result = 0.0;
+	for (int id = 1; id < p.N; id++)
+	{
+		result += id * p.a[id] * pow(x, id - 1);
+	}
+}
+
+Power EnterPower() {
 	Power f;
 	cout << "Введите коэфиценты степенной ф-ии (a*x^b + c).\n";
 
@@ -80,11 +94,16 @@ Power enter_power() {
 	return f;
 }
 
-double power_value(const Power& f, double x) {
+double PowerValue(const Power& f, double x) {
     return f.a * pow(x, f.b) + f.c;
 }
 
-Exponential enter_exponental() {
+double PowerDerivative(const Power& f, double x)
+{
+	return f.a * f.b * pow(x, f.b - 1);
+}
+
+Exponential EnterExponental() {
 	Exponential f;
 	cout << "Введите коэфиценты экспонентальной ф-ии (a*b^(c*x) + d).\n";
 
@@ -100,11 +119,16 @@ Exponential enter_exponental() {
 	return f;
 }
 
-double exponential_value(const Exponential& f, double x) {
+double ExponentialValue(const Exponential& f, double x) {
     return f.a * pow(f.b, f.c * x) + f.d;
 }
 
-Logarithm enter_logarithm() {
+double ExponentialDerivative(const Exponential& f, double x)
+{
+	return f.a * f.c * pow(f.b, f.c * x) * log(f.b);
+}
+
+Logarithm EnterLogarithm() {
 	Logarithm f;
 	cout << "Введите коэфиценты логарифмической ф-ии (a*ln(b*x) + c).\n";
 
@@ -118,11 +142,16 @@ Logarithm enter_logarithm() {
 	return f;
 }
 
-double logarithm_value(const Logarithm& f, double x) {
+double LogarithmValue(const Logarithm& f, double x) {
     return f.a * log(f.b * x) + f.c;
 }
 
-Sinusoid enter_sinusoid() {
+double LogarithmDerivative(const Logarithm& f, double x)
+{
+	return f.a / (f.b * x);
+}
+
+Sinusoid EnterSinusoid() {
 	Sinusoid f;
 	cout << "Введите коэфиценты ф-ии синусоиды (a*sin(b*x + c) + d).\n";
 
@@ -133,17 +162,20 @@ Sinusoid enter_sinusoid() {
 	cout << "c = ";
 	cin >> f.c;
 	cout << "d = ";
-	cout << "d = ";
 	cin >> f.d;
 
 	return f;
 }
 
-double sinusoid_value(const Sinusoid& f, double x) {
+double SinusoidValue(const Sinusoid& f, double x) {
     return f.a * sin(f.b * x + f.c) + f.d;
 }
 
-Cosinusoid enter_cosinusoid() {
+double SinusoidDerivative(const Sinusoid& f, double x) {
+	return f.a * f.b * cos(f.b * x + f.c);
+}
+
+Cosinusoid EnterCosinusoid() {
 	Cosinusoid f;
 	cout << "Введите коэфиценты ф-ии косинусоиды (a*cos(b*x + c) + d).\n";
 
@@ -154,12 +186,15 @@ Cosinusoid enter_cosinusoid() {
 	cout << "c = ";
 	cin >> f.c;
 	cout << "d = ";
-	cout << "d = ";
 	cin >> f.d;
 
 	return f;
 }
 
-double cosinusoid_value(const Cosinusoid& f, double x) {
+double CosinusoidValue(const Cosinusoid& f, double x) {
     return f.a * cos(f.b * x + f.c) + f.d;
+}
+
+double CosinusoidDerivative(const Cosinusoid& f, double x) {
+	return -f.a * f.b * sin(f.b * x + f.c);
 }

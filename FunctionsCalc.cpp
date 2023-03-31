@@ -1,5 +1,10 @@
 #include "FunctionsCalc.h"
 
+void FunctionsMenu()
+{
+
+};
+
 double polynomial_value(const Polynomial& p, double x) {
     double y = 0.0;
     for (int i = p.N; i >= 0; i--) {

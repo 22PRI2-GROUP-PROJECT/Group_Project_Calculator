@@ -63,16 +63,12 @@ void MainMenu(int switcher)
     }
     if (key == 13 || key == 32)
     {
-        if (switcher == 1) { MatrMenu(); MainMenu(1);}
-        if (switcher == 2) { ProbStatCalcMenu(); MainMenu(1); }
-        if (switcher == 3) { CombMenu(); MainMenu(1); }
-            //
-        if (switcher == 4) { ProbStatCalcMenu(); MainMenu(1); }
-            //
-        if (switcher == 5) { PolynomialCalcMenu(); MainMenu(1); }
-            //
-        if (switcher == 6) { FunctionsMenu(); MainMenu(1); }
-            //
+        if (switcher == 1) { system("cls"); MatrMenu(); MainMenu(1);}
+        if (switcher == 2) { system("cls"); FractionsMenu(); MainMenu(1); }
+        if (switcher == 3) { system("cls"); CombMenu(); MainMenu(1); }
+        if (switcher == 4) { system("cls"); ProbStatCalcMenu(); MainMenu(1); }
+        if (switcher == 5) { system("cls"); PolynomialCalcMenu(); MainMenu(1); }
+        if (switcher == 6) { system("cls"); FunctionsMenu(); MainMenu(1); }
         if (switcher == 7)
         {
             _exit(0);

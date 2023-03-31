@@ -3,11 +3,13 @@
 void ProbStatCalcMenu() {
 	int choose = 0;
 	cout << "Выберите операцию\n";
+	cout << "0) Вернуться в главное меню\n"
 	cout << "1) Найти вероятность m/n\n";
 	cout << "2) Найти математическое ожидание\n";
 	cout << "3) Найти дисперсию\n";
 	cin >> choose;
 	switch (choose) {
+	case 0: return;
 	case 1:ProbabilityCalc(); break;
 	case 2:MathExpectation(); break;
 	case 3:DispersionCalc(); break;

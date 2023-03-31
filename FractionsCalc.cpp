@@ -4,12 +4,14 @@
 void FractionsMenu() {
 	int choose = 0;
 	cout << "Выберите операцию\n";
+	cout << "0) Вернуться в главное меню\n"
 	cout << "1) Базовые математические операции\n";
 	cout << "2) Сравнение дробей\n";
 	cout << "3) Сокращение дроби\n";
 	cout << "4) Перевод в десятичную дробь\n";
 	cin >> choose;
 	switch (choose) {
+	case 0: return;
 	case 1:
 	case 2:
 	case 3:

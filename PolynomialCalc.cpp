@@ -2,12 +2,13 @@
 //Зайцев И. Н.
 int ReadPolynomial(char* string)//чтение полинома
 {
+	setlocale(LC_ALL, "Russian");
 	char key;
 	int string_lenth = 0;
 	int size = 0;
 	int point;
 	system("cls");
-	cout << "Enter the polynomial:" << endl;
+	cout << "Введите полином\nСначала укажите знак или коэффициент, затем нажмите на х, чтобы указать степень\n используйте + и -, чтобы указать следующий фрагмент:" << endl;
 	for (int i = 0; i < string_lenth; i++) printf("%c", string[i]);
 	do
 	{
@@ -23,7 +24,7 @@ int ReadPolynomial(char* string)//чтение полинома
 			do//коэффициент
 			{
 				system("cls");
-				cout << "Enter the polynomial:" << endl;
+				cout << "Введите полином\nСначала укажите знак или коэффициент, затем нажмите на х, чтобы указать степень\n используйте + и -, чтобы указать следующий фрагмент:" << endl;
 				for (int i = 0; i < string_lenth; i++) printf("%c", string[i]);
 				key = _getch();
 			} while ((key < '0' || key > '9'));
@@ -38,7 +39,7 @@ int ReadPolynomial(char* string)//чтение полинома
 				do
 				{
 					system("cls");
-					cout << "Enter the polynomial:" << endl;
+					cout << "Введите полином\nСначала укажите знак или коэффициент, затем нажмите на х, чтобы указать степень\n используйте + и -, чтобы указать следующий фрагмент:" << endl;
 					for (int i = 0; i < string_lenth; i++) printf("%c", string[i]);
 					key = _getch();
 				} while (key != 'x' && (key < '0' || key > '9') && (key != '.' && !point));
@@ -56,7 +57,7 @@ int ReadPolynomial(char* string)//чтение полинома
 			do
 			{
 				system("cls");
-				cout << "Enter the polynomial:" << endl;
+				cout << "Введите полином\nСначала укажите знак или коэффициент, затем нажмите на х, чтобы указать степень\n используйте + и -, чтобы указать следующий фрагмент:" << endl;
 				for (int i = 0; i < string_lenth; i++) printf("%c", string[i]);
 				key = _getch();
 			} while (key < '0' || key > '9');
@@ -68,7 +69,7 @@ int ReadPolynomial(char* string)//чтение полинома
 				do
 				{
 					system("cls");
-					cout << "Enter the polynomial:" << endl;
+					cout << "Введите полином\nСначала укажите знак или коэффициент, затем нажмите на х, чтобы указать степень\n используйте + и -, чтобы указать следующий фрагмент:" << endl;
 					for (int i = 0; i < string_lenth; i++) printf("%c", string[i]);
 					key = _getch();
 				} while (key != '-' && key != '+' && key != '\r' && (key < '0' || key > '9'));
@@ -83,7 +84,7 @@ int ReadPolynomial(char* string)//чтение полинома
 	} while (key != '\r');
 	return size;
 }
-void StringToPolynomial(Monomial* polynomial, char* string, int size)//запись введённых значеинй в массив полинома
+void StringToPolynomial(Monomial* polynomial, char* string, int size)//запись введённых значений в массив полинома
 {
 	int n = 0;
 	for (int i = 0; i < size; i++)
@@ -192,7 +193,7 @@ void PrintPolynomial(Monomial* polynomial, int size)//вывод полинома на экран
 	return;
 }
 
-void PrintPolynomial2(Monomial* polynomial, int size)//вывод полинома на экран
+void PrintPolynomial2(Monomial* polynomial, int size)//вывод полинома на экран с сохранением предыдущего вывода
 {
 	if (!size)
 	{
@@ -344,9 +345,9 @@ void PolynomialNumberMult()//вычисление произведения полинома на число
 	char first_polynomial_string[l_max];
 	Monomial* first_polynomial;
 	int first_polynomial_size = ReadPolynomial(first_polynomial_string);
-	int number;
+	double number;
 	system("cls");
-	cout << "Enter the number: " << endl;
+	cout << "Введите число:" << endl;
 	cin >> number;
 	if (!first_polynomial_size)
 	{
@@ -398,7 +399,7 @@ void PolynomialDeriv()//вычисление производной полинома
 	return;
 }
 
-void PolynomialDiv()//вычисление разности 
+void PolynomialDiv()//вычисление частного 
 {
 	char first_polynomial_string[l_max];
 	char second_polynomial_string[l_max];
@@ -511,6 +512,7 @@ void PolynomialDiv()//вычисление разности
 
 void PolynomialCalcMenu()
 {
+	setlocale(LC_ALL, "Russian");
 	char key;
 	do
 	{
@@ -518,7 +520,7 @@ void PolynomialCalcMenu()
 		do
 		{
 			system("cls");
-			cout << "1 - PolynomialSum\n2 - PolynomialDif\n3 - PolynomialMult\n4 - PolynomialNumberMult\n5 - PolynomialDeriv\n6 - PolynomialDiv\n0 - Exit" << endl;
+			cout << "1 - Сумма многочленов\n2 - Разность многочленов\n3 - Произведение многочленов\n4 - Произведение многочлена на число\n5 - Производная многочлена\n6 - Деление многочлена\n0 - Выход в главное меню" << endl;
 			key = _getch();
 		} while (key < '0' || key>'6');
 		switch (int(key) - 48)

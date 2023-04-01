@@ -476,7 +476,7 @@ void PolynomialDiv()//вычисление разности
 	{
 		for (int j = 0; j + 1 < second_polynomial_size; j++)
 		{
-			big_polynomial[i + 1 + j].koefficient -= small_polynomial[j + 1].koefficient;
+			big_polynomial[i + 1 + j].koefficient -= small_polynomial[j + 1].koefficient * big_polynomial[i].koefficient / small_polynomial[0].koefficient;
 		}
 		if (big_polynomial[i].pow - small_polynomial[0].pow >= 0)
 		{

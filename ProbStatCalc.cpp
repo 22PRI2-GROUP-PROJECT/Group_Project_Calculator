@@ -2,38 +2,39 @@
 // Zhurov E. D.
 void ProbStatCalcMenu() {
 	int choose = 0;
-	cout << "Âûáåðèòå îïåðàöèþ\n";
-	cout << "0) Âåðíóòüñÿ â ãëàâíîå ìåíþ\n";
-	cout << "1) Íàéòè âåðîÿòíîñòü m/n\n";
-	cout << "2) Íàéòè ìàòåìàòè÷åñêîå îæèäàíèå\n";
-	cout << "3) Íàéòè äèñïåðñèþ\n";
+	cout << "Ã‚Ã»Ã¡Ã¥Ã°Ã¨Ã²Ã¥ Ã®Ã¯Ã¥Ã°Ã Ã¶Ã¨Ã¾\n";
+	cout << "0) Ã‚Ã¥Ã°Ã­Ã³Ã²Ã¼Ã±Ã¿ Ã¢ Ã£Ã«Ã Ã¢Ã­Ã®Ã¥ Ã¬Ã¥Ã­Ã¾\n";
+	cout << "1) ÃÃ Ã©Ã²Ã¨ Ã¢Ã¥Ã°Ã®Ã¿Ã²Ã­Ã®Ã±Ã²Ã¼ m/n\n";
+	cout << "2) ÃÃ Ã©Ã²Ã¨ Ã¬Ã Ã²Ã¥Ã¬Ã Ã²Ã¨Ã·Ã¥Ã±ÃªÃ®Ã¥ Ã®Ã¦Ã¨Ã¤Ã Ã­Ã¨Ã¥\n";
+	cout << "3) ÃÃ Ã©Ã²Ã¨ Ã¤Ã¨Ã±Ã¯Ã¥Ã°Ã±Ã¨Ã¾\n";
 	cin >> choose;
 	switch (choose) {
 	case 0: return;
 	case 1:ProbabilityCalc(); break;
 	case 2:MathExpectation(); break;
 	case 3:DispersionCalc(); break;
-	default: cout << "Íåâåðíîå çíà÷åíèå!\n"; ProbStatCalcMenu();
+	default: cout << "ÃÃ¥Ã¢Ã¥Ã°Ã­Ã®Ã¥ Ã§Ã­Ã Ã·Ã¥Ã­Ã¨Ã¥!\n"; ProbStatCalcMenu();
 	}
 }
 
-void ProbabilityCalc() {// Âåðîÿòíîñòü
+void ProbabilityCalc() {// Ã‚Ã¥Ã°Ã®Ã¿Ã²Ã­Ã®Ã±Ã²Ã¼
 	int n, m;
 	do {
-		cout << "Ââåäèòå êîë-âî áëàãîïðèÿòñòâóþùèõ ñîáûòèþ A èñõîäîâ: ";
+		cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ ÃªÃ®Ã«-Ã¢Ã® Ã¡Ã«Ã Ã£Ã®Ã¯Ã°Ã¨Ã¿Ã²Ã±Ã²Ã¢Ã³Ã¾Ã¹Ã¨Ãµ Ã±Ã®Ã¡Ã»Ã²Ã¨Ã¾ A Ã¨Ã±ÃµÃ®Ã¤Ã®Ã¢: ";
 		cin >> m;
-		cout << "Ââåäèòå êîë-âî âñåõ âîçìîæíûõ èñõîäîâ: ";
+		cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ ÃªÃ®Ã«-Ã¢Ã® Ã¢Ã±Ã¥Ãµ Ã¢Ã®Ã§Ã¬Ã®Ã¦Ã­Ã»Ãµ Ã¨Ã±ÃµÃ®Ã¤Ã®Ã¢: ";
 		cin >> n;
 	} while ((n < 0) || (m <= 0));
-	cout << "P(A): " << double(m) / double(n);
+	cout << "P(A): " << double(m) / double(n)<< endl;
+	ProbStatCalcMenu();
 }
 
-void DispersionCalc() {// Äèñïåðñèÿ
+void DispersionCalc() {// Ã„Ã¨Ã±Ã¯Ã¥Ã°Ã±Ã¨Ã¿
 	int number_of_values;
 	do {
-		cout << "Ââåäèòå êîë-âî çíà÷åíèé\n";
+		cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ ÃªÃ®Ã«-Ã¢Ã® Ã§Ã­Ã Ã·Ã¥Ã­Ã¨Ã©\n";
 		cin >> number_of_values;
-		if (number_of_values < 1) cout << "Îøèáêà! Çíà÷åíèå íå ìîæåò áûòü < 1!";
+		if (number_of_values < 1) cout << "ÃŽÃ¸Ã¨Ã¡ÃªÃ ! Ã‡Ã­Ã Ã·Ã¥Ã­Ã¨Ã¥ Ã­Ã¥ Ã¬Ã®Ã¦Ã¥Ã² Ã¡Ã»Ã²Ã¼ < 1!";
 	} while (number_of_values < 1);
 	double* x = new double[number_of_values];
 	double* p = new double[number_of_values];
@@ -48,14 +49,17 @@ void DispersionCalc() {// Äèñïåðñèÿ
 		M += p[i] * x[i];
 		D += p[i] * x[i] * x[i];
 	}
-	cout << "D: " << D - (M * M);
+	cout << "D: " << D - (M * M)<< endl;
+	delete[] x;
+	delete[] p;
+	ProbStatCalcMenu();
 }
-void MathExpectation() {// Ìàò. îæèäàíèå
+void MathExpectation() {// ÃŒÃ Ã². Ã®Ã¦Ã¨Ã¤Ã Ã­Ã¨Ã¥
 	int number_of_values;
 	do {
-		cout << "Ââåäèòå êîë-âî çíà÷åíèé\n";
+		cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ ÃªÃ®Ã«-Ã¢Ã® Ã§Ã­Ã Ã·Ã¥Ã­Ã¨Ã©\n";
 		cin >> number_of_values;
-		if (number_of_values < 1) cout << "Îøèáêà! Çíà÷åíèå íå ìîæåò áûòü < 1!";
+		if (number_of_values < 1) cout << "ÃŽÃ¸Ã¨Ã¡ÃªÃ ! Ã‡Ã­Ã Ã·Ã¥Ã­Ã¨Ã¥ Ã­Ã¥ Ã¬Ã®Ã¦Ã¥Ã² Ã¡Ã»Ã²Ã¼ < 1!";
 	} while (number_of_values < 1);
 	double* x = new double[number_of_values];
 	double* p = new double[number_of_values];
@@ -70,4 +74,7 @@ void MathExpectation() {// Ìàò. îæèäàíèå
 		M += p[i] * x[i];
 	}
 	cout << "M: " << M;
+	delete[] x;
+	delete[] p;
+	ProbStatCalcMenu();
 }
